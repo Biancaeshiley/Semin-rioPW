@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensagem com Som e Imagem Aleatória</title>
     <style>
+        /* css */
         body {
             position: relative;
             height: 100vh;
@@ -18,7 +19,9 @@
         }
     </style>
 </head>
+    <!-- html  -->
 <body>
+
     <h1>Digite seu nome</h1>
     <input type="text" id="nome" placeholder="Seu nome aqui">
     <button onclick="enviarNome()">Enviar</button>
@@ -27,8 +30,9 @@
 
     <img id="imagem" src="" alt="imagem">
 
+    <!-- java -->
     <script>
-        // Array de imagens
+        
         const imagens = [
             'img/michael1.png',
             'img/michael-moonwalk.png',
@@ -47,7 +51,6 @@
 
         ];
 
-        // Array de áudios
         const audios = [
             './audios/conversainicial.mp3',
             './audios/debuteco.mp3',
@@ -68,7 +71,7 @@
         function enviarNome() {
             const nome = document.getElementById('nome').value;
 
-            // Seleciona um áudio aleatório do array
+          
             const audioAleatorio = audios[Math.floor(Math.random() * audios.length)];
 
             const audio = new Audio(audioAleatorio);
@@ -77,7 +80,7 @@
                
             });
 
-            // Seleciona uma imagem aleatória do array
+           
             const imagemAleatoria = imagens[Math.floor(Math.random() * imagens.length)];
             const imagemElement = document.getElementById('imagem');
             imagemElement.src = imagemAleatoria;
@@ -92,7 +95,7 @@
             imagemElement.style.left = `${x}px`;
             imagemElement.style.top = `${y}px`;
 
-            // Exibe a imagem
+           
             imagemElement.style.display = 'block';
 
             
