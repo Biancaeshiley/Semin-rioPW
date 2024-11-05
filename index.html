@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem com Som e Imagem Aleatória</title>
+    <style>
+        body {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #imagem {
+            position: absolute;
+            display: none;
+            max-width: 450px;
+            max-height: 450px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Digite seu nome</h1>
+    <input type="text" id="nome" placeholder="Seu nome aqui">
+    <button onclick="enviarNome()">Enviar</button>
+
+    <p id="mensagem"></p>
+
+    <img id="imagem" src="" alt="Imagem aleatória">
+
+    <script>
+        // Array de imagens
+        const imagens = [
+            'Img/michael1.png',
+            'img/michael-moonwalk.png',
+            'img/michael-branco.png',
+            'img/michalbiber.png',
+            'img/michelpensando.png',
+            'Img/careca.png',
+            'img/justin.png',
+            'img/perto.png',
+            'img/pouca.png',
+            'img/michelsorindo.png'
+            
+        ];
+
+        // Array de áudios
+        const audios = [
+            'conversainicial.mp3',
+            'debuteco.mp3',
+            'mechamadelord.mp3',
+            'boxofgoodgood.mp3',
+            'notmyproblema.mp3',
+            'ispikivacilao.mp3',
+            'hello.mp3',
+            'lotadodepobre.mp3',
+            'confianopai.mp3',
+            'xiquexique.mp3'
+        ];
+
+        function enviarNome() {
+            const nome = document.getElementById('nome').value;
+
+            // Seleciona um áudio aleatório do array
+            const audioAleatorio = audios[Math.floor(Math.random() * audios.length)];
+
+            const audio = new Audio(audioAleatorio);
+            
+            audio.play().catch(() => {
+               
+            });
+
+            // Seleciona uma imagem aleatória do array
+            const imagemAleatoria = imagens[Math.floor(Math.random() * imagens.length)];
+            const imagemElement = document.getElementById('imagem');
+            imagemElement.src = imagemAleatoria;
+
+           
+            const larguraImagem = 450;
+            const alturaImagem = 450;
+            const x = Math.random() * (window.innerWidth - larguraImagem);
+            const y = Math.random() * (window.innerHeight - alturaImagem);
+
+            
+            imagemElement.style.left = `${x}px`;
+            imagemElement.style.top = `${y}px`;
+
+            // Exibe a imagem
+            imagemElement.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
