@@ -25,39 +25,44 @@
 
     <p id="mensagem"></p>
 
-    <img id="imagem" src="" alt="Imagem aleatória">
+    <img id="imagem" src="" alt="imagem">
 
     <script>
         // Array de imagens
         const imagens = [
-            'Img/michael1.png',
+            'img/michael1.png',
             'img/michael-moonwalk.png',
             'img/michael-branco.png',
             'img/michalbiber.png',
             'img/michelpensando.png',
             'Img/careca.png',
             'img/justin.png',
-            'img/perto.png',
+            'img/sla.png',
             'img/pouca.png',
-            'img/michelsorindo.png'
-            
+            'img/sorrindo.png',
+            'img/vermelho.png',
+            'img/banco.png',
+            'img/morto.png'
+
         ];
 
         // Array de áudios
         const audios = [
-            'conversainicial.mp3',
-            'debuteco.mp3',
-            'mechamadelord.mp3',
-            'boxofgoodgood.mp3',
-            'notmyproblema.mp3',
-            'ispikivacilao.mp3',
-            'hello.mp3',
-            'lotadodepobre.mp3',
-            'confianopai.mp3',
-            'xiquexique.mp3',
-            'minhoca.mp3'
+            './audios/conversainicial.mp3',
+            './audios/debuteco.mp3',
+            './audios/mechamadelord.mp3',
+            './audios/box.mp3',
+            './audios/notmyproblema.mp3',
+            './audios/ispikivacilao.mp3',
+            './audios/hello.mp3',
+            './audios/lotadodepobre.mp3',
+            './audios/confianopai.mp3',
+            './audios/xiquexique.mp3',
+            './audios/minhoca.mp3',
+            './audios/rebolarslow.mp3'
         ];
 
+       
         function enviarNome() {
             const nome = document.getElementById('nome').value;
 
@@ -87,6 +92,8 @@
 
             // Exibe a imagem
             imagemElement.style.display = 'block';
+
+            
         }
     </script>
 </body>
